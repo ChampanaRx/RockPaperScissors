@@ -1,6 +1,6 @@
 const options = ["rock", "paper", "scissors"];
 
-function computerChoice() {
+function getComputerChoice() {
   const choice = options[Math.floor(Math.random() * options.length)];
   return choice;
 }
@@ -30,7 +30,7 @@ function playRound(playerSelection, computerSelection) {
   
 }
 
-function playerChoice() {
+function getPlayerChoice() {
   let validatedInput = false;
   while (validatedInput == false) {
     const choice = prompt("Rock Paper Scissors");
@@ -49,8 +49,8 @@ function game() {
   let scoreComputer = 0;
 
   for (let i = 0; i < 5; i++) {
-    const playerSelection = playerChoice();
-    const computerSelection = computerChoice();
+    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
     console.log(playRound(playerSelection, computerSelection));
     console.log ("-------------------")
     if (checkWinner(playerSelection, computerSelection) == "Player") {
